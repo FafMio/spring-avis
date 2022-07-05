@@ -20,4 +20,4 @@ jobs:
         run: mvn --batch-mode --update-snapshots package -DskipTests -ntp
       
       - name: Upload to FileServer
-        run: curl -L -k -Ffile='./target/avis-0.0.1-SNAPSHOT.jar' 'http://f.hephe.net/upload?token=1ecd79f831160e6746f1'
+        run: curl -X POST -L -k -Ffile='./target/avis-0.0.1-SNAPSHOT.jar' 'http://f.hephe.net/upload?token=1ecd79f831160e6746f1'
