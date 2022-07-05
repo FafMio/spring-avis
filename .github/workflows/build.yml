@@ -18,3 +18,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package -DskipTests -ntp
+      
+      - name: Upload to FileServer
+        run: curl -Ffile=./target/avis-0.0.1-SNAPSHOT.jar 'http://f.hephe.net/upload?token=1ecd79f831160e6746f1'
